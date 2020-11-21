@@ -7,7 +7,7 @@
 
 
 int a=13;
-int b;
+int b=12;
 int c;
 int d;
 int e;
