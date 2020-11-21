@@ -7,9 +7,30 @@ const char* password = "xxx";
 
 WiFiServer server(80); //Servidor web
 
-const int LED1 = 18;  //Pines de cada LED
-const int LED2 = 19;
-
+const int LED24 = 33;  
+const int LED23 = 32;
+const int LED22 = 27;  
+const int LED21 = 26;
+const int LED20 = 25;  
+const int LED19 = 23;
+const int LED18 = 22;  
+const int LED17 = 21;
+const int LED2 = 19;  
+const int LED1 = 18;
+const int LED16 = 17;  
+const int LED15 = 16;
+const int LED14 = 15;  
+const int LED13 = 14;
+const int LED12 = 13;  
+const int LED11 = 12;
+const int LED10 = 10;  
+const int LED9 = 9;
+const int LED8 = 5;  
+const int LED7 = 4;
+const int LED6 = 3;  
+const int LED5 = 2;
+const int LED4 = 1;  
+const int LED3 = 0;
 //Variables Cliente
 char linebuf[80];
 int charcount=0;
