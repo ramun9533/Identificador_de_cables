@@ -2,8 +2,8 @@
  #include <WiFi.h>
 
 //Configuración de red
-const char* ssid     = "xxx";
-const char* password = "xxx";
+const char* ssid     = "HUAWEI P20 lite";
+const char* password = "55029eb60de0";
 
 WiFiServer server(80); //Servidor web
 
@@ -84,15 +84,15 @@ void loop() {
         // responder al cliente
        
         if (c == '\n' && currentLineIsBlank) {
-          // send a standard http response header
+          // enviar un encabezado de respuesta http estándar
           client.println("HTTP/1.1 200 OK");
           client.println("Content-Type: text/html");
-          client.println("Connection: close");  // the connection will be closed after completion of the response
+          client.println("Connection: close");  // la conexión se cerrará después de completar la respuesta
           client.println();
           client.println("<!DOCTYPE HTML><html><head>");
-          client.println("<body style=\"background-color:#0066aa;\">");
+          client.println("<body style=\"background-color:#aa4c00;\">");
           client.println("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"></head>");
-          client.println("<h1 style=\"width:500px;height:20px;color:#ffffff;\">Tutorial Web Server ESP32 </h1>");
+          client.println("<h1 style=\"width:500px;height:20px;color:#ffffff;\">Mi programa serio esp32 </h1>");
           client.println("<p style=\"color:#ffffff\">LED #1 <a href=\"on1\"><button>ON</button></a>&nbsp;<a href=\"off1\"><button>OFF</button></a></p>");
           client.println("<p style=\"color:#ffffff\">LED #2 <a href=\"on2\"><button>ON</button></a>&nbsp;<a href=\"off2\"><button>OFF</button></a></p>");
           client.println("</html>");
