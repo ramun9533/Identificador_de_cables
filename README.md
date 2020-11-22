@@ -2,7 +2,8 @@
 Este proyecto nos ayuda a identificar cables en gabinetes en base al esp32
 
 Lista de materiles
--eso32
+
+-esp32
 
 ## Contribuciones
 
@@ -10,4 +11,4 @@ Lista de materiles
 
 ### PINOUT del esp32
 
-! [Alttext] (
+![Alt text] (https://github.com/ramun9533/Identificador_de_cables/blob/main/PINOUT_esp32.png) 
