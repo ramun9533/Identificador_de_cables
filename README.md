@@ -11,4 +11,5 @@ Lista de materiles
 
 ### PINOUT del esp32
 
-! [Alt text] (https://github.com/ramun9533/Identificador_de_cables/blob/main/PINOUT_esp32.png) 
+
+![Alt text](  https://github.com/ramun9533/Identificador_de_cables/blob/main/PINOUT_esp32.png) 
