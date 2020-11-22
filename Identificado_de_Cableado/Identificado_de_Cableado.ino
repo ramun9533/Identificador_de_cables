@@ -20,11 +20,11 @@ const int LED1 = 18;// aprobado
 const int LED16 = 17;
 const int LED15 = 16;
 const int LED14 = 15;
-const int LED13 = 14;// problemas, espejea el GPIO 18
-const int LED12 = 13; // problemas, espejea el GPIO 18
-const int LED11 = 12; // problemas, espejea el GPIO 18
-const int LED10 = 10; // problemas de conexion, posiblemente sea de comunicacion
-const int LED9 = 9; // problemas de conexion, posiblemente sea de comunicacion
+//const int LED13 = 14;// problemas, espejea el GPIO 18
+//const int LED12 = 13; // problemas, espejea el GPIO 18
+//const int LED11 = 12; // problemas, espejea el GPIO 18
+//const int LED10 = 10; // problemas de conexion, posiblemente sea de comunicacion
+//const int LED9 = 9; // problemas de conexion, posiblemente sea de comunicacion
 const int LED8 = 5;// aprobado
 const int LED7 = 4;// aprobado
 const int LED6 = 3;// aprobado
@@ -48,12 +48,12 @@ void setup() {
   pinMode(LED6, OUTPUT);
   pinMode(LED7, OUTPUT);
   pinMode(LED8, OUTPUT);
-  pinMode(LED9, OUTPUT);
-  pinMode(LED10, OUTPUT);
-  pinMode(LED11, OUTPUT);
-  pinMode(LED12, OUTPUT);
-  pinMode(LED13, OUTPUT);
-  pinMode(LED14, OUTPUT);
+//  pinMode(LED9, OUTPUT);
+  //pinMode(LED10, OUTPUT);
+  //pinMode(LED11, OUTPUT);
+  //pinMode(LED12, OUTPUT);
+  //pinMode(LED13, OUTPUT);
+  //pinMode(LED14, OUTPUT);
   pinMode(LED15, OUTPUT);
   pinMode(LED16, OUTPUT);
   pinMode(LED17, OUTPUT);
@@ -118,17 +118,17 @@ void loop() {
           client.println("<p style=\"color:#14c923\">LED #1 <a href=\"on1\"><button>ON</button></a>&nbsp;<a href=\"off1\"><button>OFF</button></a></p>");
           client.println("<p style=\"color:#14c923\">LED #2 <a href=\"on2\"><button>ON</button></a>&nbsp;<a href=\"off2\"><button>OFF</button></a></p>");
           client.println("<p style=\"color:#14c923\">LED #3 <a href=\"on3\"><button>ON</button></a>&nbsp;<a href=\"off3\"><button>OFF</button></a></p>");
-          client.println("<p style=\"color:#14c923\">LED #4 <a href=\"on4\"><button>ON</button></a>&nbsp;<a href=\"off4\"><button>OFF</button></a></p>");
+          //client.println("<p style=\"color:#14c923\">LED #4 <a href=\"on4\"><button>ON</button></a>&nbsp;<a href=\"off4\"><button>OFF</button></a></p>");
           client.println("<p style=\"color:#14c923\">LED #5 <a href=\"on5\"><button>ON</button></a>&nbsp;<a href=\"off5\"><button>OFF</button></a></p>");
           client.println("<p style=\"color:#14c923\">LED #6 <a href=\"on6\"><button>ON</button></a>&nbsp;<a href=\"off6\"><button>OFF</button></a></p>");
           client.println("<p style=\"color:#14c923\">LED #7 <a href=\"on7\"><button>ON</button></a>&nbsp;<a href=\"off7\"><button>OFF</button></a></p>");
           client.println("<p style=\"color:#14c923\">LED #8 <a href=\"on8\"><button>ON</button></a>&nbsp;<a href=\"off8\"><button>OFF</button></a></p>");
-          client.println("<p style=\"color:#14c923\">LED #9 <a href=\"on9\"><button>ON</button></a>&nbsp;<a href=\"off9\"><button>OFF</button></a></p>");
-          client.println("<p style=\"color:#14c923\">LED #10 <a href=\"on10\"><button>ON</button></a>&nbsp;<a href=\"off10\"><button>OFF</button></a></p>");
-          client.println("<p style=\"color:#14c923\">LED #11 <a href=\"on11\"><button>ON</button></a>&nbsp;<a href=\"off11\"><button>OFF</button></a></p>");
-          client.println("<p style=\"color:#14c923\">LED #12 <a href=\"on12\"><button>ON</button></a>&nbsp;<a href=\"off12\"><button>OFF</button></a></p>");
-          client.println("<p style=\"color:#14c923\">LED #13 <a href=\"on13\"><button>ON</button></a>&nbsp;<a href=\"off13\"><button>OFF</button></a></p>");
-          client.println("<p style=\"color:#14c923\">LED #14 <a href=\"on2\"><button>ON</button></a>&nbsp;<a href=\"off2\"><button>OFF</button></a></p>");
+          //client.println("<p style=\"color:#14c923\">LED #9 <a href=\"on9\"><button>ON</button></a>&nbsp;<a href=\"off9\"><button>OFF</button></a></p>");
+          //client.println("<p style=\"color:#14c923\">LED #10 <a href=\"on10\"><button>ON</button></a>&nbsp;<a href=\"off10\"><button>OFF</button></a></p>");
+          //client.println("<p style=\"color:#14c923\">LED #11 <a href=\"on11\"><button>ON</button></a>&nbsp;<a href=\"off11\"><button>OFF</button></a></p>");
+          //client.println("<p style=\"color:#14c923\">LED #12 <a href=\"on12\"><button>ON</button></a>&nbsp;<a href=\"off12\"><button>OFF</button></a></p>");
+          //client.println("<p style=\"color:#14c923\">LED #13 <a href=\"on13\"><button>ON</button></a>&nbsp;<a href=\"off13\"><button>OFF</button></a></p>");
+          //client.println("<p style=\"color:#14c923\">LED #14 <a href=\"on2\"><button>ON</button></a>&nbsp;<a href=\"off2\"><button>OFF</button></a></p>");
           client.println("<p style=\"color:#14c923\">LED #15 <a href=\"on1\"><button>ON</button></a>&nbsp;<a href=\"off1\"><button>OFF</button></a></p>");
           client.println("<p style=\"color:#14c923\">LED #16 <a href=\"on2\"><button>ON</button></a>&nbsp;<a href=\"off2\"><button>OFF</button></a></p>");
           client.println("<p style=\"color:#14c923\">LED #17 <a href=\"on1\"><button>ON</button></a>&nbsp;<a href=\"off1\"><button>OFF</button></a></p>");
@@ -193,14 +193,8 @@ void loop() {
           }
           
           
-          else if (strstr(linebuf, "GET /on13") > 0) { //GPIO14
-            Serial.println("LED 13 ON");
-            digitalWrite(LED13, HIGH);
-          }
-          else if (strstr(linebuf, "GET /off13") > 0) {
-            Serial.println("LED 13 OFF");
-            digitalWrite(LED13, LOW);
-          }
+        
+
           
           
           
