@@ -26,30 +26,12 @@ void setup() {
   pinMode(LED1, OUTPUT);
   pinMode(LED2, OUTPUT);
   pinMode(LED3, OUTPUT);
-  //pinMode(LED4, OUTPUT);
   pinMode(LED5, OUTPUT);
   pinMode(LED6, OUTPUT);
   pinMode(LED7, OUTPUT);
   pinMode(LED8, OUTPUT);
-//  pinMode(LED9, OUTPUT);
-  //pinMode(LED10, OUTPUT);
-  //pinMode(LED11, OUTPUT);
-  //pinMode(LED12, OUTPUT);
-  //pinMode(LED13, OUTPUT);
-  //pinMode(LED14, OUTPUT);
-  pinMode(LED15, OUTPUT);
-  pinMode(LED16, OUTPUT);
-  pinMode(LED17, OUTPUT);
-  pinMode(LED18, OUTPUT);
-  pinMode(LED19, OUTPUT);
-  pinMode(LED20, OUTPUT);
-  pinMode(LED21, OUTPUT);
-  pinMode(LED22, OUTPUT);
-  pinMode(LED23, OUTPUT);
-  pinMode(LED24, OUTPUT);
 
-
-  Serial.printf("Conectando a: %s\n", ssid);
+ Serial.printf("Conectando a: %s\n", ssid);
 
   WiFi.begin(ssid, password);
 
@@ -101,29 +83,10 @@ void loop() {
           client.println("<p style=\"color:#14c923\">LED #1 <a href=\"on1\"><button>ON</button></a>&nbsp;<a href=\"off1\"><button>OFF</button></a></p>");
           client.println("<p style=\"color:#14c923\">LED #2 <a href=\"on2\"><button>ON</button></a>&nbsp;<a href=\"off2\"><button>OFF</button></a></p>");
           client.println("<p style=\"color:#14c923\">LED #3 <a href=\"on3\"><button>ON</button></a>&nbsp;<a href=\"off3\"><button>OFF</button></a></p>");
-          //client.println("<p style=\"color:#14c923\">LED #4 <a href=\"on4\"><button>ON</button></a>&nbsp;<a href=\"off4\"><button>OFF</button></a></p>");
           client.println("<p style=\"color:#14c923\">LED #5 <a href=\"on5\"><button>ON</button></a>&nbsp;<a href=\"off5\"><button>OFF</button></a></p>");
           client.println("<p style=\"color:#14c923\">LED #6 <a href=\"on6\"><button>ON</button></a>&nbsp;<a href=\"off6\"><button>OFF</button></a></p>");
           client.println("<p style=\"color:#14c923\">LED #7 <a href=\"on7\"><button>ON</button></a>&nbsp;<a href=\"off7\"><button>OFF</button></a></p>");
           client.println("<p style=\"color:#14c923\">LED #8 <a href=\"on8\"><button>ON</button></a>&nbsp;<a href=\"off8\"><button>OFF</button></a></p>");
-          //client.println("<p style=\"color:#14c923\">LED #9 <a href=\"on9\"><button>ON</button></a>&nbsp;<a href=\"off9\"><button>OFF</button></a></p>");
-          //client.println("<p style=\"color:#14c923\">LED #10 <a href=\"on10\"><button>ON</button></a>&nbsp;<a href=\"off10\"><button>OFF</button></a></p>");
-          //client.println("<p style=\"color:#14c923\">LED #11 <a href=\"on11\"><button>ON</button></a>&nbsp;<a href=\"off11\"><button>OFF</button></a></p>");
-          //client.println("<p style=\"color:#14c923\">LED #12 <a href=\"on12\"><button>ON</button></a>&nbsp;<a href=\"off12\"><button>OFF</button></a></p>");
-          //client.println("<p style=\"color:#14c923\">LED #13 <a href=\"on13\"><button>ON</button></a>&nbsp;<a href=\"off13\"><button>OFF</button></a></p>");
-          //client.println("<p style=\"color:#14c923\">LED #14 <a href=\"on2\"><button>ON</button></a>&nbsp;<a href=\"off2\"><button>OFF</button></a></p>");
-          client.println("<p style=\"color:#14c923\">LED #15 <a href=\"on1\"><button>ON</button></a>&nbsp;<a href=\"off1\"><button>OFF</button></a></p>");
-          client.println("<p style=\"color:#14c923\">LED #16 <a href=\"on2\"><button>ON</button></a>&nbsp;<a href=\"off2\"><button>OFF</button></a></p>");
-          client.println("<p style=\"color:#14c923\">LED #17 <a href=\"on1\"><button>ON</button></a>&nbsp;<a href=\"off1\"><button>OFF</button></a></p>");
-          client.println("<p style=\"color:#14c923\">LED #18 <a href=\"on2\"><button>ON</button></a>&nbsp;<a href=\"off2\"><button>OFF</button></a></p>");
-          client.println("<p style=\"color:#14c923\">LED #19 <a href=\"on1\"><button>ON</button></a>&nbsp;<a href=\"off1\"><button>OFF</button></a></p>");
-          client.println("<p style=\"color:#14c923\">LED #20 <a href=\"on2\"><button>ON</button></a>&nbsp;<a href=\"off2\"><button>OFF</button></a></p>");
-          client.println("<p style=\"color:#14c923\">LED #21 <a href=\"on1\"><button>ON</button></a>&nbsp;<a href=\"off1\"><button>OFF</button></a></p>");
-          client.println("<p style=\"color:#14c923\">LED #22 <a href=\"on2\"><button>ON</button></a>&nbsp;<a href=\"off2\"><button>OFF</button></a></p>");
-          client.println("<p style=\"color:#14c923\">LED #23 <a href=\"on1\"><button>ON</button></a>&nbsp;<a href=\"off1\"><button>OFF</button></a></p>");
-          client.println("<p style=\"color:#14c923\">LED #24 <a href=\"on2\"><button>ON</button></a>&nbsp;<a href=\"off2\"><button>OFF</button></a></p>");
-          
-          
           
           client.println("</html>");
           break;
@@ -156,6 +119,27 @@ void loop() {
             Serial.println("LED 3 OFF");
             digitalWrite(LED3, LOW);
           }
+
+            if (strstr(linebuf, "GET /on5") > 0) {
+            Serial.println("LED 5 ON");
+            digitalWrite(LED5, HIGH);
+          }
+          else if (strstr(linebuf, "GET /off5") > 0) {
+            Serial.println("LED 5 OFF");
+            digitalWrite(LED5, LOW);
+          }
+
+            if (strstr(linebuf, "GET /on6") > 0) {
+            Serial.println("LED 6 ON");
+            digitalWrite(LED6, HIGH);
+          }
+          else if (strstr(linebuf, "GET /off6") > 0) {
+            Serial.println("LED 6 OFF");
+            digitalWrite(LED6, LOW);
+          }
+
+
+
           else if (strstr(linebuf, "GET /on7") > 0) {
             Serial.println("LED 7 ON");
             digitalWrite(LED7, HIGH);
@@ -175,24 +159,7 @@ void loop() {
             digitalWrite(LED8, LOW);
           }
           
-          
-        
-
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          // Empieza una nueva línea
+     // Empieza una nueva línea
           currentLineIsBlank = true;
           memset(linebuf, 0, sizeof(linebuf));
           charcount = 0;
