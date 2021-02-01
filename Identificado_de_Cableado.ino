@@ -69,11 +69,11 @@ void loop() {
           client.println("Connection: close");  // the connection will be closed after completion of the response
           client.println();
           client.println("<!DOCTYPE HTML><html><head>");
-          client.println("<body style=\"background-color:#0066aa;\">");
+          client.println("<body style=\"background-color:#324851;\">");
           client.println("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"></head>");
-          client.println("<h1 style=\"width:500px;height:20px;color:#ffffff;\">Tutorial Web Server ESP32 </h1>");
-          client.println("<p style=\"color:#ffffff\">LED #1 <a href=\"on1\"><button>ON</button></a>&nbsp;<a href=\"off1\"><button>OFF</button></a></p>");
-          client.println("<p style=\"color:#ffffff\">LED #2 <a href=\"on2\"><button>ON</button></a>&nbsp;<a href=\"off2\"><button>OFF</button></a></p>");
+          client.println("<h1 style=\"width:500px;height:20px;color:#86ac41;\">Tutorial Web Server ESP32 </h1>");
+          client.println("<p style="color:#7da3a1">LED #1 <a href=\"on1\"><button>ON</button></a>&nbsp;<a href=\"off1\"><button>OFF</button></a></p>");
+          client.println("<p style="color:#7da3a1">LED #2 <a href=\"on2\"><button>ON</button></a>&nbsp;<a href=\"off2\"><button>OFF</button></a></p>");
           client.println("</html>");
           break;
         }
