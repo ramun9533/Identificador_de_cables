@@ -16,4 +16,4 @@ Lista de materiles
 
 ### Video de prueba de proyecto
 _Lista de Video prueba/evidencia_
-- <a href="https://www.youtube.com/watch?v=qW2Inm9ntBU">Primeras pruebas</a>
+- <a href="https://www.youtube.com/watch?v=qW2Inm9ntBU">Se comienza a estilizar interface</a>
