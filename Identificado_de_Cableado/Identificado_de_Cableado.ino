@@ -77,11 +77,29 @@ void loop() {
           client.println("Connection: close");  // la conexión se cerrará después de completar la respuesta
           client.println();
           client.println("<!DOCTYPE HTML><html><head>");
+          //       client.println("<html lang="en"dir="ltr"> " );
+          client.println(" <head> ");
+          client.println("<link href='https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css' rel='stylesheet'> ");
+
+//   client.println(" <meta charset="utf-8">");
+          client.println(" <title>Identificador</title>");
+          client.println("</head>");
+          client.println(" <body>");
+
+          client.println("  </body>");
+          client.println("</html>"); 
+          
+          
           client.println("<body style=\"background-color:#050200;\">"); //fondo negro
           client.println("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"></head>");
           client.println("<h1 style=\"width:500px;height:20px;color:#33285e;\">Mi programa serio esp32 </h1>"); // color de encabezado
-          client.println("<p style=\"color:#14c923\">LED #1 <a href=\"on1\"><button>ON</button></a>&nbsp;<a href=\"off1\"><button>OFF</button></a></p>");
-          client.println("<p style=\"color:#14c923\">LED #2 <a href=\"on2\"><button>ON</button></a>&nbsp;<a href=\"off2\"><button>OFF</button></a></p>");
+       //   <p style=\"color:#6c757d\">LED #1 <a href=\"on1\"><button class="py-2 px-4 bg-Gray-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75">ON</button>
+//  <p style=\"color:#14c923\">LED #1 <a href=\"on1\"><button class="py-2 px-4 bg-Gray-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo400 focus:ring-opacity-75">OFF</button>
+          client.println("<p style=\"color:#6c757d\">LED #1 <a href=\"on1\"><button class="py-2 px-4 bg-Gray-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75">ON</button>");
+          client.println("<p style=\"color:#6c757d\">LED #1 <a href=\"on1\"><button class="py-2 px-4 bg-Gray-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75">ON</button>");
+          client.println("<p style=\"color:#6c757d\">LED #2 <a href=\"on2\"><button class="py-2 px-4 bg-Gray-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75">ON</button>");
+          client.println("<p style=\"color:#6c757d\">LED #2 <a href=\"on2\"><button class="py-2 px-4 bg-Gray-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75">ON</button>");
+          
           client.println("<p style=\"color:#14c923\">LED #3 <a href=\"on3\"><button>ON</button></a>&nbsp;<a href=\"off3\"><button>OFF</button></a></p>");
           client.println("<p style=\"color:#14c923\">LED #5 <a href=\"on5\"><button>ON</button></a>&nbsp;<a href=\"off5\"><button>OFF</button></a></p>");
           client.println("<p style=\"color:#14c923\">LED #6 <a href=\"on6\"><button>ON</button></a>&nbsp;<a href=\"off6\"><button>OFF</button></a></p>");
