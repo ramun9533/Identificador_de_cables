@@ -119,19 +119,39 @@ Connection: close
 </tr>
 
 <tr>
+<td><p> SALIDA #1  </p>
+  <td><a href="\on1\"><button class="rounded bg-green-500 hover:bg-green-700 py-2 px-4 text-white">ON</button></a>&nbsp;
+    <a href="\off1\"><button class="rounded bg-red-500 hover:bg-red-700 py-2 px-4 text-white">OFF</button></a></td></td>
+  <td><p>SALIDA #2 </p>
+    <td><a href="\on2\"><button class="rounded bg-green-500 hover:bg-green-700 py-2 px-4 text-white" >ON</button></a>&nbsp;
+      <a href="\off2\"><button class="rounded bg-red-500 hover:bg-red-700 py-2 px-4 text-white">OFF</button></a></td></td>
+    </tr>
+<tr>
+</tr>
+
+<tr>
+<td><p>SALIDA#3 </p>
+<td><a href="\on3\"><button class="rounded bg-green-500 hover:bg-green-700 py-2 px-4 text-white">ON</button></a>&nbsp;
+  <a href="\off3\"><button class="rounded bg-red-500 hover:bg-red-700 py-2 px-4 text-white">OFF</button></a></td></td>
+<td><p>SALIDA #4 </p>
+  <td><a href="\on4\"><button class="rounded bg-green-500 hover:bg-green-700 py-2 px-4 text-white">ON</button>
+  </a>&nbsp;<a href="\off4\"><button class="rounded bg-red-500 hover:bg-red-700 py-2 px-4 text-white">OFF</button></a></td></td>
+</tr>
+
+<tr>
 <td><p> SALIDA #5  </p>
-  <td><a href=\"on5\"><button class="rounded bg-green-500 hover:bg-green-700 py-2 px-4 text-white">ON</button></a>&nbsp;
-    <a href=\"off5\"><button class="rounded bg-red-500 hover:bg-red-700 py-2 px-4 text-white">OFF</button></a></td></td>
+  <td><a href="\on5\"><button class="rounded bg-green-500 hover:bg-green-700 py-2 px-4 text-white">ON</button></a>&nbsp;
+    <a href="\off5\"><button class="rounded bg-red-500 hover:bg-red-700 py-2 px-4 text-white">OFF</button></a></td></td>
   <td><p>SALIDA #6 </p>
-    <td><a href=\"on6\"><button class="rounded bg-green-500 hover:bg-green-700 py-2 px-4 text-white" >ON</button></a>&nbsp;
-      <a href=\"off6\"><button class="rounded bg-red-500 hover:bg-red-700 py-2 px-4 text-white">OFF</button></a></td></td>
+    <td><a href="\on6\"><button class="rounded bg-green-500 hover:bg-green-700 py-2 px-4 text-white" >ON</button></a>&nbsp;
+      <a href="\off6\"><button class="rounded bg-red-500 hover:bg-red-700 py-2 px-4 text-white">OFF</button></a></td></td>
 </tr>
 <tr>
 </tr>
 
 <tr>
 <td><p>SALIDA #7 </p>
-<td><a href=\"on1\"><button class="rounded bg-green-500 hover:bg-green-700 py-2 px-4 text-white">ON</button></a>&nbsp;
+<td><a href="/on1\"><button class="rounded bg-green-500 hover:bg-green-700 py-2 px-4 text-white">ON</button></a>&nbsp;
   <a href=\"off1\"><button class="rounded bg-red-500 hover:bg-red-700 py-2 px-4 text-white">OFF</button></a></td></td>
 <td><p>SALIDA #8 </p>
   <td><a href=\"on1\"><button class="rounded bg-green-500 hover:bg-green-700 py-2 px-4 text-white">ON</button>
@@ -165,7 +185,7 @@ Connection: close
 </html>
 
 )====";
-client.println(html);
+client.println(html); //jalo la pagina html por medio de: const char *html = R"====( 
           
           break;
         }
@@ -207,22 +227,22 @@ client.println(html);
             digitalWrite(LED4, LOW);
           }
 
-          if (strstr(linebuf, "GET /on6") > 0) {
+          if (strstr(linebuf, "GET /on5") > 0) {
+            Serial.println("LED 5 ON");
+            digitalWrite(LED5, HIGH);
+          }
+          else if (strstr(linebuf, "GET /off5") > 0) {
+            Serial.println("LED 5 OFF");
+            digitalWrite(LED5, LOW);                  //Verificar salidas a partir de aqui
+          }
+
+          else if (strstr(linebuf, "GET /on6") > 0) {
             Serial.println("LED 6 ON");
             digitalWrite(LED6, HIGH);
           }
           else if (strstr(linebuf, "GET /off6") > 0) {
             Serial.println("LED 6 OFF");
-            digitalWrite(LED6, LOW);                  //Verificar salidas a partir de aqui
-          }
-
-          else if (strstr(linebuf, "GET /on7") > 0) {
-            Serial.println("LED 7 ON");
-            digitalWrite(LED7, HIGH);
-          }
-          else if (strstr(linebuf, "GET /off7") > 0) {
-            Serial.println("LED 7 OFF");
-            digitalWrite(LED7, LOW);
+            digitalWrite(LED6, LOW);
           }
 
           // Empieza una nueva línea
