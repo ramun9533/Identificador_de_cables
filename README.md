@@ -17,7 +17,7 @@ Lista de materiles
 ## Lo que muestra el Esp32 y lo que se pretende mostrar
 <img src="https://raw.githubusercontent.com/ramun9533/Identificador_de_cables/main/lo_que_muestra_el_esp32_ahora.png" class="w3-image w3-hide-large w3-hide-medium w3-round" width="300" height="300" style="
     border-radius: 15px;">
-   <img src="https://raw.githubusercontent.com/ramun9533/Identificador_de_cables/main/Screenshot_57.png" class="w3-image w3-hide-large w3-hide-medium w3-round" width="300" height="300" style="
+   <img src="https://raw.githubusercontent.com/ramun9533/Identificador_de_cables/main/Screenshot_20210520_021511.png    " class="w3-image w3-hide-large w3-hide-medium w3-round" width="300" height="300" style="
     border-radius: 15px;">
     
 ### Video de prueba de proyecto
