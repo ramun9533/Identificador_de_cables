@@ -57,8 +57,7 @@ void loop() {
     // Una petición http termina con línea en blanco.
     boolean currentLineIsBlank = true;
 
-
-    while (client.connected()) {  //Mientras que el cliente está conectado
+      while (client.connected()) {  //Mientras que el cliente está conectado
       if (client.available()) {   //Si se recibe algun dato del cliente.
         char c = client.read();
         Serial.write(c);
@@ -255,9 +254,7 @@ client.println(html); //jalo la pagina html por medio de: const char *html = R"=
         }
       }
     }
-
     delay(1);  // Esperamos un poco para que el navegador reciba los datos.
-
     // Cerramos la conexión con el cliente
     client.stop();
     Serial.println("Cliente desconectado");
