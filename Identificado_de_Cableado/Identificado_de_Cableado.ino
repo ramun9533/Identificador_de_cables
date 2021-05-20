@@ -1,18 +1,16 @@
-
 #include <WiFi.h>
 
 //Configuración de red
 const char* ssid     = "HUAWEI P20 lite";
 const char* password = "55029eb60de0";
-
 WiFiServer server(80); //Servidor web
 
 const int LED2 = 19;// aprobado
 const int LED1 = 18;// aprobado
-const int LED8 = 5;// aprobado
-const int LED7 = 4;// aprobado
-const int LED6 = 3;// aprobado
-const int LED5 = 2;// aprobado
+const int LED7 = 5;// aprobado
+const int LED6 = 4;// aprobado
+const int LED5 = 3;// aprobado
+const int LED4 = 2;// aprobado
 const int LED3 = 0;// aprobado
 //Variables Cliente
 char linebuf[80];
@@ -26,12 +24,12 @@ void setup() {
   pinMode(LED1, OUTPUT);
   pinMode(LED2, OUTPUT);
   pinMode(LED3, OUTPUT);
+  pinMode(LED4, OUTPUT);
   pinMode(LED5, OUTPUT);
   pinMode(LED6, OUTPUT);
   pinMode(LED7, OUTPUT);
-  pinMode(LED8, OUTPUT);
 
- Serial.printf("Conectando a: %s\n", ssid);
+  Serial.printf("Conectando a: %s\n", ssid);
 
   WiFi.begin(ssid, password);
 
@@ -46,6 +44,7 @@ void setup() {
   Serial.println(WiFi.localIP());
 
   server.begin(); //Iniciamos el servidor web.
+
 }
 
 void loop() {
@@ -76,37 +75,98 @@ void loop() {
           client.println("Content-Type: text/html");
           client.println("Connection: close");  // la conexión se cerrará después de completar la respuesta
           client.println();
-          client.println("<!DOCTYPE HTML><html><head>");
-          //       client.println("<html lang="en"dir="ltr"> " );
-          client.println(" <head> ");
-          client.println("<link href='https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css' rel='stylesheet'> ");
+          const char *html = R"====(
+HTTP/1.1 200 OK
 
-//   client.println(" <meta charset="utf-8">");
-          client.println(" <title>Identificador</title>");
-          client.println("</head>");
-          client.println(" <body>");
+Content-Type: text/html
 
-          client.println("  </body>");
-          client.println("</html>"); 
+Connection: close
+
+<!DOCTYPE HTML><html><head>
+  <html lang="es" dir="ltr">
+  <head>
+<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+  <title>Identificador</title>
+  </head>
+  <body style= "background-color:#415a77;background-image:url('https://raw.githubusercontent.com/ramun9533/Pagina-de-Presentacion/main/fonddo.png')";>
+
+<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
+
+<h1 style=\"width:500px;height:20px;color:#33285e;\"> Mi programa serio esp32 </h1>
+
+<div class="flex w-full h-full justify-center content-center items-center">
+
+<table>
+<tr>
+<td><p> SALIDA #1  </p>
+  <td><a href=/"on1"><button class="rounded bg-green-500 hover:bg-green-700 py-2 px-4 text-white">ON</button></a>&nbsp;
+    <a href=/"off1"><button class="rounded bg-red-500 hover:bg-red-700 py-2 px-4 text-white">OFF</button></a></td></td>
+  <td><p>SALIDA #2 </p>
+    <td><a href=/"on2"><button class="rounded bg-green-500 hover:bg-green-700 py-2 px-4 text-white" >ON</button></a>&nbsp;
+      <a href=/"off2"><button class="rounded bg-red-500 hover:bg-red-700 py-2 px-4 text-white">OFF</button></a></td></td>
+    </tr>
+<tr>
+</tr>
+
+<tr>
+<td><p>SALIDA#3 </p>
+<td><a href=\"#on3\"><button class="rounded bg-green-500 hover:bg-green-700 py-2 px-4 text-white">ON</button></a>&nbsp;
+  <a href=\"#off3\"><button class="rounded bg-red-500 hover:bg-red-700 py-2 px-4 text-white">OFF</button></a></td></td>
+<td><p>SALIDA #4 </p>
+  <td><a href=\"#on4\"><button class="rounded bg-green-500 hover:bg-green-700 py-2 px-4 text-white">ON</button>
+  </a>&nbsp;<a href=\"#off4\"><button class="rounded bg-red-500 hover:bg-red-700 py-2 px-4 text-white">OFF</button></a></td></td>
+</tr>
+
+<tr>
+<td><p> SALIDA #5  </p>
+  <td><a href=\"on5\"><button class="rounded bg-green-500 hover:bg-green-700 py-2 px-4 text-white">ON</button></a>&nbsp;
+    <a href=\"off5\"><button class="rounded bg-red-500 hover:bg-red-700 py-2 px-4 text-white">OFF</button></a></td></td>
+  <td><p>SALIDA #6 </p>
+    <td><a href=\"on6\"><button class="rounded bg-green-500 hover:bg-green-700 py-2 px-4 text-white" >ON</button></a>&nbsp;
+      <a href=\"off6\"><button class="rounded bg-red-500 hover:bg-red-700 py-2 px-4 text-white">OFF</button></a></td></td>
+</tr>
+<tr>
+</tr>
+
+<tr>
+<td><p>SALIDA #7 </p>
+<td><a href=\"on1\"><button class="rounded bg-green-500 hover:bg-green-700 py-2 px-4 text-white">ON</button></a>&nbsp;
+  <a href=\"off1\"><button class="rounded bg-red-500 hover:bg-red-700 py-2 px-4 text-white">OFF</button></a></td></td>
+<td><p>SALIDA #8 </p>
+  <td><a href=\"on1\"><button class="rounded bg-green-500 hover:bg-green-700 py-2 px-4 text-white">ON</button>
+  </a>&nbsp;<a href=\"off1\"><button class="rounded bg-red-500 hover:bg-red-700 py-2 px-4 text-white">OFF</button></a></td></td>
+</tr>
+
+<tr>
+<td><p> SALIDA #9  </p>
+  <td><a href=\"on1\"><button class="rounded bg-green-500 hover:bg-green-700 py-2 px-4 text-white">ON</button></a>&nbsp;
+    <a href=\"off1\"><button class="rounded bg-red-500 hover:bg-red-700 py-2 px-4 text-white">OFF</button></a></td></td>
+  <td><p>SALIDA #10 </p>
+    <td><a href=\"on1\"><button class="rounded bg-green-500 hover:bg-green-700 py-2 px-4 text-white" >ON</button></a>&nbsp;
+      <a href=\"off1\"><button class="rounded bg-red-500 hover:bg-red-700 py-2 px-4 text-white">OFF</button></a></td></td>
+
+</tr>
+<tr>
+</tr>
+<tr>
+<td><p>SALIDA #11 </p>
+<td><a href=\"on1\"><button class="rounded bg-green-500 hover:bg-green-700 py-2 px-4 text-white">ON</button></a>&nbsp;
+  <a href=\"off1\"><button class="rounded bg-red-500 hover:bg-red-700 py-2 px-4 text-white">OFF</button></a></td></td>
+<td><p>SALIDA #12 </p>
+  <td><a href=\"on1\"><button class="rounded bg-green-500 hover:bg-green-700 py-2 px-4 text-white">ON</button>
+  </a>&nbsp;<a href=\"off1\"><button class="rounded bg-red-500 hover:bg-red-700 py-2 px-4 text-white">OFF</button></a></td></td>
+</tr>
+</table>
+</div>
+
+</body>
+
+</html>
+
+)====";
+client.println(html);
           
-          
-          client.println("<body style=\"background-color:#050200;\">"); //fondo negro
-          client.println("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"></head>");
-          client.println("<h1 style=\"width:500px;height:20px;color:#33285e;\">Mi programa serio esp32 </h1>"); // color de encabezado
-       //   <p style=\"color:#6c757d\">LED #1 <a href=\"on1\"><button class="py-2 px-4 bg-Gray-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75">ON</button>
-//  <p style=\"color:#14c923\">LED #1 <a href=\"on1\"><button class="py-2 px-4 bg-Gray-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo400 focus:ring-opacity-75">OFF</button>
-          client.println("<p style=\"color:#6c757d\">LED #1 <a href=\"on1\"><button class="py-2 px-4 bg-Gray-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75">ON</button>");
-          client.println("<p style=\"color:#6c757d\">LED #1 <a href=\"on1\"><button class="py-2 px-4 bg-Gray-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75">ON</button>");
-          client.println("<p style=\"color:#6c757d\">LED #2 <a href=\"on2\"><button class="py-2 px-4 bg-Gray-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75">ON</button>");
-          client.println("<p style=\"color:#6c757d\">LED #2 <a href=\"on2\"><button class="py-2 px-4 bg-Gray-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75">ON</button>");
-          
-          client.println("<p style=\"color:#14c923\">LED #3 <a href=\"on3\"><button>ON</button></a>&nbsp;<a href=\"off3\"><button>OFF</button></a></p>");
-          client.println("<p style=\"color:#14c923\">LED #5 <a href=\"on5\"><button>ON</button></a>&nbsp;<a href=\"off5\"><button>OFF</button></a></p>");
-          client.println("<p style=\"color:#14c923\">LED #6 <a href=\"on6\"><button>ON</button></a>&nbsp;<a href=\"off6\"><button>OFF</button></a></p>");
-          client.println("<p style=\"color:#14c923\">LED #7 <a href=\"on7\"><button>ON</button></a>&nbsp;<a href=\"off7\"><button>OFF</button></a></p>");
-          client.println("<p style=\"color:#14c923\">LED #8 <a href=\"on8\"><button>ON</button></a>&nbsp;<a href=\"off8\"><button>OFF</button></a></p>");
-          
-          client.println("</html>");
           break;
         }
 
@@ -129,7 +189,7 @@ void loop() {
             Serial.println("LED 2 OFF");
             digitalWrite(LED2, LOW);
           }
-           if (strstr(linebuf, "GET /on3") > 0) {
+          if (strstr(linebuf, "GET /on3") > 0) {
             Serial.println("LED 3 ON");
             digitalWrite(LED3, HIGH);
           }
@@ -138,25 +198,23 @@ void loop() {
             digitalWrite(LED3, LOW);
           }
 
-            if (strstr(linebuf, "GET /on5") > 0) {
-            Serial.println("LED 5 ON");
-            digitalWrite(LED5, HIGH);
+          if (strstr(linebuf, "GET /on4") > 0) {
+            Serial.println("LED 4 ON");
+            digitalWrite(LED4, HIGH);
           }
-          else if (strstr(linebuf, "GET /off5") > 0) {
-            Serial.println("LED 5 OFF");
-            digitalWrite(LED5, LOW);
+          else if (strstr(linebuf, "GET /off4") > 0) {
+            Serial.println("LED 4 OFF");
+            digitalWrite(LED4, LOW);
           }
 
-            if (strstr(linebuf, "GET /on6") > 0) {
+          if (strstr(linebuf, "GET /on6") > 0) {
             Serial.println("LED 6 ON");
             digitalWrite(LED6, HIGH);
           }
           else if (strstr(linebuf, "GET /off6") > 0) {
             Serial.println("LED 6 OFF");
-            digitalWrite(LED6, LOW);
+            digitalWrite(LED6, LOW);                  //Verificar salidas a partir de aqui
           }
-
-
 
           else if (strstr(linebuf, "GET /on7") > 0) {
             Serial.println("LED 7 ON");
@@ -166,18 +224,8 @@ void loop() {
             Serial.println("LED 7 OFF");
             digitalWrite(LED7, LOW);
           }
-          
-          
-          else if (strstr(linebuf, "GET /on8") > 0) { //GPIO5
-            Serial.println("LED 8 ON");
-            digitalWrite(LED8, HIGH);
-          }
-          else if (strstr(linebuf, "GET /off8") > 0) {
-            Serial.println("LED 8 OFF");
-            digitalWrite(LED8, LOW);
-          }
-          
-     // Empieza una nueva línea
+
+          // Empieza una nueva línea
           currentLineIsBlank = true;
           memset(linebuf, 0, sizeof(linebuf));
           charcount = 0;
