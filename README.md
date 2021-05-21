@@ -8,6 +8,7 @@ Lista de materiles
 ## Contribuciones
 
 [Ramun] (http://github.com/Ramun9533)
+[DevC512L] (https://github.com/DevC512L)
 
 ### PINOUT del esp32
 
