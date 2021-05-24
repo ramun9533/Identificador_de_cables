@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+<style>
+  .switch input {
+    display: none;
+  }
+
+  .switch {
+    display: inline-block;
+    width: 60px; /*=w*/
+    height: 30px; /*=h*/
+    margin: 8px;
+    transform: translateY(50%);
+    position: relative;
+  }
+
+  .slider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 30px;
+    box-shadow: 0 0 0 2px #777, 0 0 4px #777; /*boton desactivo orilla de la caja 2px y sombra dela caja 4px*/
+    cursor: pointer;
+    border: 4px solid transparent; /* la circunferencia del interior boton */
+    overflow: hidden;
+    transition: 0.4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "C"; /*la escritura solo aparece cuando es activado el boton*/
+    width: 100%; /*ancho del boton*/
+    height: 100%;/*alto del boton*/
+    background-color: #ffba08; /*color inicial del boton*/
+    border-radius: 30px;
+    transform: translateX(-30px); /*translateX(-(w-h)), corrimiento hacia la izquierda en posicion inicial*/
+    transition: 0.4s;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(30px); /*translateX(w-h)*/
+    background-color: limeGreen; /*la parte interna del boton cuando se activa*/
+  }
+
+  input:checked + .slider {
+    box-shadow: 0 0 0 2px limeGreen, 0 0 8px limeGreen; /*boton activo orilla de la caja 2px y sombra dela caja 8px*/
+  }
+
+  .switch200 .slider:before {
+    width: 200%;
+    transform: translateX(-82px); /*translateX(-(w-h))*/
+  }
+
+  .switch200 input:checked + .slider:before {
+    background-color: red;
+  }
+
+  .switch200 input:checked + .slider {
+    box-shadow: 0 0 0 2px red, 0 0 8px red;
+  }
+
+</style>
+
+  <body>
+
+<div class="">
+  <label class= "switch" >
+<input type="checkbox" name="" value="">
+<span class="slider">
+
+
+</span>
+
+
+  </label>
+Switch 1
+
+
+</div>
+
+<div class="">
+  <label class= "switch" >
+<input type="checkbox" name="" value="">
+<span class="slider">
+
+
+</span>
+
+
+  </label>
+Switch 2
+
+
+</div>
+
+<div class="">
+  <label class= "switch" >
+<input type="checkbox" name="" value="">
+<span class="slider">
+
+
+</span>
+
+
+  </label>
+Switch 3
+
+
+</div>
+
+
+  </body>
+</html>
