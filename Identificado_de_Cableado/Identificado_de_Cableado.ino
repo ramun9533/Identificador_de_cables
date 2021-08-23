@@ -21,7 +21,7 @@ void setup() {
   Serial.begin(115200);
 
   //Configuramos los pines como salida.
-  pinMode(LED1, OUTPUT);
+  pinMode(LED1, OUTPUT);//sar for en el  pinmode
   pinMode(LED2, OUTPUT);
   pinMode(LED3, OUTPUT);
   pinMode(LED4, OUTPUT);
@@ -71,7 +71,7 @@ void loop() {
         if (c == '\n' && currentLineIsBlank) {
           // enviar un encabezado de respuesta http estándar
           client.println("HTTP/1.1 200 OK");
-          client.println("Content-Type: text/html");
+          client.println("Content-Type: text/html"); // usar dos variables con for para imprimir html y href botones
           client.println("Connection: close");  // la conexión se cerrará después de completar la respuesta
           client.println();
           const char *html = R"====(
