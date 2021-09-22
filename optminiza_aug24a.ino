@@ -2,8 +2,8 @@
 #include <WiFi.h>
 
 //Configuración de red
-const char* ssid     = "INFINITUM299D_2.4";
-const char* password = "TF2ZG3774h";
+const char* ssid     = "*****";
+const char* password = "******";
 
 WiFiServer server(80); //Servidor web
 
